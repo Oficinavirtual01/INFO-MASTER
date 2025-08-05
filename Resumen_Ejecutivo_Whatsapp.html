@@ -1,0 +1,166 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Resumen Ejecutivo JPDS I</title>
+      <style>
+        :root {
+          --color-primario: #1565c0; /* Azul oscuro */
+          --color-secundario: #fbc02d; /* Dorado */
+          --color-fondo: #f4f4f9;
+          --color-texto: #333;
+          --color-aumento: #d32f2f; /* Rojo */
+          --color-disminucion: #388e3c; /* Verde */
+          --color-borde: #ddd;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: var(--color-fondo);
+          color: var(--color-texto);
+        }
+        .container {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+          background-color: var(--color-primario);
+          color: white;
+          padding: 15px;
+          text-align: center;
+          font-size: 1.2em;
+          font-weight: bold;
+          border-radius: 8px 8px 0 0;
+          margin: -20px -20px 20px -20px;
+        }
+        .seccion {
+          margin-bottom: 25px;
+        }
+        h3 {
+          font-size: 1.1em;
+          margin-bottom: 10px;
+          border-bottom: 2px solid var(--color-secundario);
+          padding-bottom: 5px;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        li {
+          padding: 8px 0;
+          border-bottom: 1px dashed var(--color-borde);
+          font-size: 0.9em;
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+        .aumento { color: var(--color-aumento); font-weight: bold; }
+        .disminucion { color: var(--color-disminucion); font-weight: bold; }
+        .footer {
+          text-align: center;
+          font-size: 0.8em;
+          color: #777;
+          margin-top: 40px;
+        }
+        .botonera {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 30px;
+        }
+        .btn {
+          display: block;
+          padding: 12px;
+          text-decoration: none;
+          color: white;
+          background-color: var(--color-primario);
+          border-radius: 5px;
+          text-align: center;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+          background-color: #0d47a1;
+        }
+        .btn.capital { background-color: #e53935; }
+        .btn.capital:hover { background-color: #c62828; }
+        .btn.godoy { background-color: #2e7d32; }
+        .btn.godoy:hover { background-color: #1b5e20; }
+        .periodo {
+          text-align: center;
+          font-style: italic;
+          color: #555;
+          margin-top: -10px;
+          margin-bottom: 20px;
+        }
+        .conclusion {
+          background-color: #fffde7;
+          border-left: 4px solid var(--color-secundario);
+          padding: 15px;
+          margin-top: 25px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          📊 Informe Semanal JPDS I
+        </div>
+        <p class="periodo">📅 Período de análisis: Semana del 21/07 hasta el 27/07 Vs. Semana del 28/07 hasta el 03/08</p>
+
+        <div class="seccion">
+          <h3>📈 Resumen General</h3>
+          <ul>
+            <li>Total JPSD I: 92 ▼ -12% (-6 casos)</li>
+            <li>Capital: 38 ▼ -10% (-2 casos)</li>
+            <li>Godoy Cruz: 54 ▼ -14% (-4 casos)</li>
+          </ul>
+        </div>
+        
+        <div class="seccion">
+          <h3>🔺 Principales Aumentos de Delitos</h3>
+          <ul>
+            <li>Robo <span class="aumento">+6 casos</span></li><li>Robo c/Arma Fuego <span class="aumento">+1 casos</span></li><li>Robo EGT <span class="aumento">+1 casos</span></li>
+          </ul>
+        </div>
+
+        <div class="seccion">
+          <h3>🔻 Principales Bajas de Delitos</h3>
+          <ul>
+            <li>Robo Agrav. <span class="disminucion">-8 casos</span></li><li>Hurto Agrav. <span class="disminucion">-2 casos</span></li><li>Hurto <span class="disminucion">-2 casos</span></li>
+          </ul>
+        </div>
+
+        <div class="conclusion">
+          <h3>📌 Conclusiones Clave</h3>
+          <ul>
+            <li>El delito con mayor aumento fue **"Robo"**</li>
+            <li>La mayor baja se registró en **"Robo Agrav."**</li>
+            <li>La comisaría con mayor movimiento fue **"Cria__5"** <span class="aumento">(+6 casos)</span></li>
+            <li>La comisaría con mayor baja fue **"Cria__6"** <span class="disminucion">(-5 casos)</span></li>
+          </ul>
+        </div>
+
+        <div class="botonera">
+            <h3>Ver Informes Completos</h3>
+            <a href="https://oficinavirtual01.github.io/INFO-GENERAL-CGC/" target="_blank" class="btn">Informe General</a>
+            <a href="https://oficinavirtual01.github.io/INFO-CAPITAL/" target="_blank" class="btn capital">Informe Capital</a>
+            <a href="https://oficinavirtual01.github.io/INFO-GODOY-CRUZ/" target="_blank" class="btn godoy">Informe Godoy Cruz</a>
+        </div>
+
+        <div class="footer">
+            <p>Of. Virtual de Estadísticas Delictuales y Operacionales</p>
+            <p>Jefatura de Policía de Seguridad Distrital I</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  
