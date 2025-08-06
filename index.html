@@ -1,166 +1,183 @@
-
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Resumen Ejecutivo JPDS I</title>
-      <style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Ejecutivo - Análisis Delictual</title>
+    <style>
         :root {
-          --color-primario: #1565c0; /* Azul oscuro */
-          --color-secundario: #fbc02d; /* Dorado */
-          --color-fondo: #f4f4f9;
-          --color-texto: #333;
-          --color-aumento: #d32f2f; /* Rojo */
-          --color-disminucion: #388e3c; /* Verde */
-          --color-borde: #ddd;
+            --bg-color: #0d47a1; /* Azul oscuro */
+            --text-color: #ffffff;
+            --card-bg: #1976d2; /* Azul medio */
+            --button-bg: #ffc107; /* Dorado */
+            --button-text: #0d47a1;
+            --success-color: #4caf50; /* Verde */
+            --danger-color: #f44336; /* Rojo */
+            --neutral-color: #cccccc;
         }
+
         body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: var(--color-fondo);
-          color: var(--color-texto);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
+
         .container {
-          max-width: 600px;
-          margin: 20px auto;
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(25, 118, 210, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            text-align: center;
         }
-        .header {
-          background-color: var(--color-primario);
-          color: white;
-          padding: 15px;
-          text-align: center;
-          font-size: 1.2em;
-          font-weight: bold;
-          border-radius: 8px 8px 0 0;
-          margin: -20px -20px 20px -20px;
-        }
-        .seccion {
-          margin-bottom: 25px;
-        }
-        h3 {
-          font-size: 1.1em;
-          margin-bottom: 10px;
-          border-bottom: 2px solid var(--color-secundario);
-          padding-bottom: 5px;
-        }
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        li {
-          padding: 8px 0;
-          border-bottom: 1px dashed var(--color-borde);
-          font-size: 0.9em;
-        }
-        li:last-child {
-          border-bottom: none;
-        }
-        .aumento { color: var(--color-aumento); font-weight: bold; }
-        .disminucion { color: var(--color-disminucion); font-weight: bold; }
-        .footer {
-          text-align: center;
-          font-size: 0.8em;
-          color: #777;
-          margin-top: 40px;
-        }
-        .botonera {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-top: 30px;
-        }
-        .btn {
-          display: block;
-          padding: 12px;
-          text-decoration: none;
-          color: white;
-          background-color: var(--color-primario);
-          border-radius: 5px;
-          text-align: center;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-          background-color: #0d47a1;
-        }
-        .btn.capital { background-color: #e53935; }
-        .btn.capital:hover { background-color: #c62828; }
-        .btn.godoy { background-color: #2e7d32; }
-        .btn.godoy:hover { background-color: #1b5e20; }
-        .periodo {
-          text-align: center;
-          font-style: italic;
-          color: #555;
-          margin-top: -10px;
-          margin-bottom: 20px;
-        }
-        .conclusion {
-          background-color: #fffde7;
-          border-left: 4px solid var(--color-secundario);
-          padding: 15px;
-          margin-top: 25px;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          📊 Informe Semanal JPDS I
-        </div>
-        <p class="periodo">📅 Período de análisis: Semana del 21/07 hasta el 27/07 Vs. Semana del 28/07 hasta el 03/08</p>
 
-        <div class="seccion">
-          <h3>📈 Resumen General</h3>
-          <ul>
-            <li>Total JPSD I: 92 ▼ -12% (-6 casos)</li>
-            <li>Capital: 38 ▼ -10% (-2 casos)</li>
-            <li>Godoy Cruz: 54 ▼ -14% (-4 casos)</li>
-          </ul>
-        </div>
+        h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: var(--button-bg);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .period {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .indicator {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
         
-        <div class="seccion">
-          <h3>🔺 Principales Aumentos de Delitos</h3>
-          <ul>
-            <li>Robo <span class="aumento">+6 casos</span></li><li>Robo c/Arma Fuego <span class="aumento">+1 casos</span></li><li>Robo EGT <span class="aumento">+1 casos</span></li>
-          </ul>
+        .indicator.danger { color: var(--danger-color); }
+        .indicator.success { color: var(--success-color); }
+        .indicator.neutral { color: var(--neutral-color); }
+
+        .indicator-label {
+            font-size: 0.9em;
+            color: #eee;
+            margin-top: 5px;
+        }
+
+        .button-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .future-feature {
+            background-color: #333;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>RESUMEN EJECUTIVO</h1>
+    <div class="subtitle">Análisis Delictual - JPSD I</div>
+    <div class="period">Quincena del 6/7/2025 al 4/8/2025</div>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">Tendencia General</div>
+            <div class="indicator down">
+                <span style="font-size: 1.5em; line-height: 1;">▼</span> 21% ((-26))
+            </div>
+            <div class="indicator-label">Disminución en el total de delitos</div>
         </div>
 
-        <div class="seccion">
-          <h3>🔻 Principales Bajas de Delitos</h3>
-          <ul>
-            <li>Robo Agrav. <span class="disminucion">-8 casos</span></li><li>Hurto Agrav. <span class="disminucion">-2 casos</span></li><li>Hurto <span class="disminucion">-2 casos</span></li>
-          </ul>
+        <div class="card">
+            <div class="card-title">Indicador de Estabilidad</div>
+            <div class="indicator neutral" style="font-size: 1.5em; line-height: 1;">
+                Media
+            </div>
+            <div class="indicator-label">La fluctuación del delito en la quincena se mantiene media.</div>
         </div>
 
-        <div class="conclusion">
-          <h3>📌 Conclusiones Clave</h3>
-          <ul>
-            <li>El delito con mayor aumento fue **"Robo"**</li>
-            <li>La mayor baja se registró en **"Robo Agrav."**</li>
-            <li>La comisaría con mayor movimiento fue **"Cria__5"** <span class="aumento">(+6 casos)</span></li>
-            <li>La comisaría con mayor baja fue **"Cria__6"** <span class="disminucion">(-5 casos)</span></li>
-          </ul>
+        <div class="card">
+            <div class="card-title">Resumen por Jurisdicción</div>
+            <div style="margin-bottom: 10px;">
+                <div style="font-weight: bold;">JPD Godoy Cruz</div>
+                <div class="indicator up" style="font-size: 1.2em;">
+                    <span style="font-size: 1.5em;">▲</span> 4% ((+2))
+                </div>
+            </div>
+            <div>
+                <div style="font-weight: bold;">JPD Capital</div>
+                <div class="indicator down" style="font-size: 1.2em;">
+                    <span style="font-size: 1.5em;">▼</span> 40% ((-19))
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="botonera">
-            <h3>Ver Informes Completos</h3>
-            <a href="https://oficinavirtual01.github.io/INFO-GENERAL-CGC/" target="_blank" class="btn">Informe General</a>
-            <a href="https://oficinavirtual01.github.io/INFO-CAPITAL/" target="_blank" class="btn capital">Informe Capital</a>
-            <a href="https://oficinavirtual01.github.io/INFO-GODOY-CRUZ/" target="_blank" class="btn godoy">Informe Godoy Cruz</a>
-        </div>
+    <div class="button-grid">
+        <a href="https://oficinavirtual01.github.io/INFO-GENERAL-CGC/" class="btn">Ver Informe Completo JPSD I</a>
+        <a href="https://oficinavirtual01.github.io/INFO-CAPITAL/" class="btn">Ver Informe JPD Capital</a>
+        <a href="https://oficinavirtual01.github.io/INFOGC/" class="btn">Ver Informe JPD Godoy Cruz</a>
+        <a href="#" onclick="alert('Próximamente instalaremos el nuevo SAT'); return false;" class="btn future-feature">Alertas Tempranas - Mapa de Calor</a>
+    </div>
+</div>
 
-        <div class="footer">
-            <p>Of. Virtual de Estadísticas Delictuales y Operacionales</p>
-            <p>Jefatura de Policía de Seguridad Distrital I</p>
-        </div>
-      </div>
-    </body>
-    </html>
+</body>
+</html>
   
